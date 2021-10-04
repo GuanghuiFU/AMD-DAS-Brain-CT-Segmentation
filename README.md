@@ -17,6 +17,7 @@ In the second stage, we use labelled pseudo-CT images (obtained from the first s
 ## Contact
 
 Daqiang Dong: dongdaqiang@emails.bjut.edu.cn
+
 Guanghui Fu: guanghui.fu@icm-institute.org; aslanfu123@gmail.com
 
 
