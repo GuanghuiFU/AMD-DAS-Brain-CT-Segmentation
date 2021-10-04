@@ -8,13 +8,19 @@ This is the implementation of a paper titled: An Unsupervised Domain Adaptation 
 
 ## Getting Started
 
-## Stage 1: Training of Image Synthesis Network
+### Prerequisites
+
+Python 3
+
+CPU or NVIDIA GPU + CUDA CuDNN
+
+### Stage 1: Training of Image Synthesis Network
 In the first stage, we train a pseudo-CT image synthesis network to minimize the difference between the two modalities.
 
-## Stage 2: Domain adaptation Segmentation
+### Stage 2: Domain adaptation Segmentation
 In the second stage, we use labelled pseudo-CT images (obtained from the first stage network) and unlabeled CT images to train domain adaptation segmentation network.
 
-## Matching Mechanism
+### Matching Mechanism
 In the training process of the image synthesis network, inputting the image pairs selected by this method can improve the performance of downstream tasks.
 
 
