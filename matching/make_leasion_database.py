@@ -24,8 +24,8 @@ def get_mri_ratio(img):
 
 if __name__ == "__main__":
 
-    MRI_PATH=r'D:\Project\CycleGAN-and-pix2pix-master\datasets\mri2ct\mask'
-    CT_PATH=r'D:\Project\CycleGAN-and-pix2pix-master\datasets\mri2ct\trianb2zhihua'
+    MRI_PATH=r'D:\Project\AMD-DAS\datasets\mri2ct\mask'
+    CT_PATH=r'D:\Project\AMD-DAS\datasets\mri2ct\trianb_binary'
     MRI_ratio_dict = {}
     CT_ratio_dict = {}
     for img in tqdm(os.listdir(MRI_PATH)):
@@ -35,7 +35,6 @@ if __name__ == "__main__":
     for img in tqdm(os.listdir(CT_PATH)):
         ratio = get_ct_ratio(os.path.join(CT_PATH, img))
         CT_ratio_dict[img] = ratio
-
 
     for mri in tqdm(MRI_ratio_dict):
         mri_ratio=MRI_ratio_dict[mri]

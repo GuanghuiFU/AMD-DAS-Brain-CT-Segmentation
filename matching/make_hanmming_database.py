@@ -30,20 +30,20 @@ def get_hanming(s_hash_a, s_hash_b):
 
 if __name__ == "__main__":
 
-    MRI_PATH=r'D:\Project\CycleGAN-and-pix2pix-master\datasets\mri2ct\trainA'
-    CT_PATH=r'D:\Project\CycleGAN-and-pix2pix-master\datasets\mri2ct\trainB_original2'
+    MRI_PATH=r'D:\Project\AMD-DAS\datasets\mri2ct\trainA'
+    CT_PATH=r'D:\Project\AMD-DAS\datasets\mri2ct\trainB_original2'
     MRI_hash_dict = {}
     CT_hash_dict = {}
     for img in tqdm(os.listdir(MRI_PATH)):
         phash_bi, phash_hex=get_phash(os.path.join(MRI_PATH,img))
         MRI_hash_dict[img]=phash_bi
     np.save('mri_hash.npy',MRI_hash_dict)
-    print('MRI保存完成')
+    print('MRI fingerprints saved')
     for img in tqdm(os.listdir(CT_PATH)):
         phash_bi, phash_hex = get_phash(os.path.join(CT_PATH, img))
         CT_hash_dict[img] = phash_bi
     np.save('ct_hash.npy', CT_hash_dict)
-    print('CT保存完成')
+    print('CT fingerprints saved')
 
     for mri in tqdm(MRI_hash_dict):
         mri_hash=MRI_hash_dict[mri]
@@ -52,4 +52,4 @@ if __name__ == "__main__":
             ct_hash=CT_hash_dict[img]
             hanming=get_hanming(mri_hash,ct_hash)
             hanming_dict[img]=hanming
-        np.save(os.path.join(r'D:\Project\blog_code-master\blog_code-master\img_sim_hash\hanming',mri+'_hanming.npy'), hanming_dict)
+        np.save(os.path.join(r'D:\Project\AMD-DAS\img_sim_hash\hanming',mri+'_hanming.npy'), hanming_dict)

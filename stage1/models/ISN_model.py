@@ -199,7 +199,7 @@ class ISNModel(BaseModel):
         gan_loss=self.criterionGAN(B_out, Alabel)
         self.loss_fusiongan=15*gan_loss
         self.loss_fusiongan.backward()
-
+ 
     def backward_D_domain(self):
         device='cuda'
         source_label = 1
